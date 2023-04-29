@@ -3,7 +3,7 @@ export function TodosIndex(props) {
     <div>
       <h1>Todos Index</h1>
       {props.todos.map((todo) => (
-        <div>
+        <div key={todo.id}>
           <p>{todo.title}</p>
           <input type="checkbox"></input>
         </div>

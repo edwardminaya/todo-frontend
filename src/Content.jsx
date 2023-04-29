@@ -17,11 +17,11 @@ export function Content() {
     });
   };
 
-  useEffect(handleIndexTodos);
+  useEffect(handleIndexTodos, []);
 
   //View
   return (
-    <div>
+    <div className="container">
       <h1>Todo List</h1>
       <Routes>
         <Route path="/" element={<TodosIndex todos={todos} />} />
