@@ -6,6 +6,8 @@ This is a Todo frontend using React. The goal is to create the frontend that has
 
 Clone this repository onto your machine. Ensure that you are able to run React on your machine. If you need a backend see this link to get that started [Backend](https://github.com/edwardminaya/todo-api)
 
+Make sure to configure the rack-cors gem to allow web requests from localhost:5173 [instructions](https://gist.github.com/peterxjang/77d6243cf85103b027a56b401b62b289)
+
 Once the repository is on your machine get into the folder on your terminal and run teh following commands
 
 ```
