@@ -22,7 +22,6 @@ export function Content() {
   //View
   return (
     <div className="container">
-      <h1>Todo List</h1>
       <Routes>
         <Route path="/" element={<TodosIndex todos={todos} />} />
       </Routes>
