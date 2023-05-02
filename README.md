@@ -20,13 +20,13 @@ You will be able to see the application and it should be pulling in data from th
 
 # Minimum Viable Product
 
-- Allow users to see all of their tasks (in progress)
-- Allow users to create a task
+- Allow users to see all of their tasks (complete)
+- Allow users to create a task (in progress)
 - Allow users to see an individual task
 - Allow users to update a task
 - Allow users to delete a task
-- Allow users to to sign up
-- Allow users to login and logout
+- Allow users to to sign up (in progress)
+- Allow users to login and logout (in progress)
 
 # Future Features
 
