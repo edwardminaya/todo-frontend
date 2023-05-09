@@ -7,6 +7,7 @@ import { TodosNew } from "./TodosNew";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import { LogoutLink } from "./LogoutLink";
 
 export function Content() {
   // Variables
@@ -32,6 +33,7 @@ export function Content() {
   //View
   return (
     <div className="container">
+      {localStorage.jwt == undefined ? <div>Welcome to Todo App</div> : <TodosIndex todos={todos} />}
       <Routes>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

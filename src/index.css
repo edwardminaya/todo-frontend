@@ -1,35 +1,17 @@
 #root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color: #f7f7f7;
-  background-color: #233142;
   scroll-behavior: smooth;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
-#task {
-  border: solid;
-  border-width: 3px;
-  border-radius: 10px;
-  border-color: #e3e3e3;
-  margin-top: 10px;
-  margin-left: 20%;
-  margin-right: 20%;
-  
-}
-
-#title {
-  text-align: left;
-  border-right: solid;
-  border-color: #f95959;
-  padding-top: 15px;
-}
-
-#checkbox {
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
   text-align: center;
-  vertical-align: middle;
-  padding-top: 15px;
-  padding-left: 2px;
-  padding-right: 2px;
+  border-top: solid;
+  border-color: silver;
+  margin-left: 10%;
+  margin-right: 10%;
 }
