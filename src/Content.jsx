@@ -32,11 +32,9 @@ export function Content() {
   //View
   return (
     <div className="container">
-      <TodosNew onCreateTodo={handleCreateTodo} />
       <Routes>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<TodosIndex todos={todos} />} />
       </Routes>
     </div>
   );
