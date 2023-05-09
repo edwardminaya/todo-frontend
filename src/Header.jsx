@@ -19,11 +19,6 @@ export function Header() {
           {/* LINKS */}
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  About
-                </a>
-              </li>
               {localStorage.jwt == undefined ? (
                 <>
                   <li className="nav-item">
@@ -39,6 +34,11 @@ export function Header() {
                 </>
               ) : (
                 <>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/mytasks">
+                      My Tasks
+                    </a>
+                  </li>
                   <li className="nav-item">
                     <div className="nav-link">
                       <LogoutLink />

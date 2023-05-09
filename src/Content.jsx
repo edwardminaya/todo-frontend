@@ -7,7 +7,6 @@ import { TodosNew } from "./TodosNew";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import { LogoutLink } from "./LogoutLink";
 
 export function Content() {
   // Variables
@@ -23,6 +22,7 @@ export function Content() {
 
   // Creating a new task
   const handleCreateTodo = (params) => {
+    console.log("handleCreateTodo", params);
     axios.post("http://localhost:3000/todos.json", params).then((response) => {
       setTodos([...todos, response.data]);
     });
@@ -33,11 +33,23 @@ export function Content() {
   //View
   return (
     <div className="container">
-      {localStorage.jwt == undefined ? <div>Welcome to Todo App</div> : <TodosIndex todos={todos} />}
-      <Routes>
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
+      {localStorage.jwt == undefined ? (
+        <div>
+          <h1>Welcome! Login or Signup</h1>
+          <Routes>
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </div>
+      ) : (
+        <div>
+          <h1>Welcome back!</h1>
+          <TodosNew onCreateTodo={handleCreateTodo} />
+          <Routes>
+            <Route path="/mytasks" element={<TodosIndex todos={todos} />} />
+          </Routes>
+        </div>
+      )}
     </div>
   );
 }
