@@ -4,10 +4,11 @@ import { Login } from "./Login";
 import { TodosIndex } from "./TodosIndex";
 import { ListsIndex } from "./ListsIndex";
 import { TodosNew } from "./TodosNew";
+import { ListsNew } from "./ListsNew";
 // Other imports
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 export function Content() {
   // Variables
@@ -15,12 +16,21 @@ export function Content() {
   const [lists, setLists] = useState([]);
 
   // Getting data from index todos
-  const handleIndexTodos = () => {
-    axios.get("http://localhost:3000/todos.json").then((response) => {
+  const handleIndexTodos = (list_id) => {
+    axios.get(`http://localhost:3000/todos.json?list_id=${list_id}`).then((response) => {
       console.log(response.data);
       setTodos(response.data);
     });
   };
+
+  const location = useLocation();
+  const list_id = new URLSearchParams(location.search).get("list_id");
+
+  useEffect(() => {
+    if (list_id) {
+      handleIndexTodos(list_id);
+    }
+  }, [list_id]);
 
   // Getting data from index lists
   const handleIndexLists = () => {
@@ -35,6 +45,14 @@ export function Content() {
     console.log("handleCreateTodo", params);
     axios.post("http://localhost:3000/todos.json", params).then((response) => {
       setTodos([...todos, response.data]);
+    });
+  };
+
+  // Creating a new List
+  const handleCreateList = (params) => {
+    console.log("handleCreateList", params);
+    axios.post("http://localhost:3000/lists.json", params).then((response) => {
+      setLists([...lists, response.data]);
     });
   };
 
@@ -54,13 +72,15 @@ export function Content() {
         </div>
       ) : (
         <div>
-          <h1>Welcome back!</h1>
           <div className="container">
             <div className="row">
               <div className="col-3">
+                <h3>My Lists</h3>
+                <ListsNew onCreateList={handleCreateList} />
                 <ListsIndex lists={lists} />
               </div>
               <div className="col-9">
+                <h3>My Tasks</h3>
                 <TodosNew onCreateTodo={handleCreateTodo} />
                 <TodosIndex todos={todos} />
               </div>
