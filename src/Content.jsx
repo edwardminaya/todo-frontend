@@ -14,6 +14,8 @@ export function Content() {
   // Variables
   const [todos, setTodos] = useState([]);
   const [lists, setLists] = useState([]);
+  const location = useLocation();
+  const list_id = new URLSearchParams(location.search).get("list_id");
 
   // Getting data from index todos
   const handleIndexTodos = (list_id) => {
@@ -22,9 +24,6 @@ export function Content() {
       setTodos(response.data);
     });
   };
-
-  const location = useLocation();
-  const list_id = new URLSearchParams(location.search).get("list_id");
 
   useEffect(() => {
     if (list_id) {
@@ -56,7 +55,6 @@ export function Content() {
     });
   };
 
-  useEffect(handleIndexTodos, []);
   useEffect(handleIndexLists, []);
 
   //View
