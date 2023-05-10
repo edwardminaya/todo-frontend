@@ -35,11 +35,6 @@ export function Header() {
               ) : (
                 <>
                   <li className="nav-item">
-                    <a className="nav-link" href="/mytasks">
-                      My Tasks
-                    </a>
-                  </li>
-                  <li className="nav-item">
                     <div className="nav-link">
                       <LogoutLink />
                     </div>
