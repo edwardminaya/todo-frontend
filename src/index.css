@@ -15,3 +15,10 @@ footer {
   margin-left: 10%;
   margin-right: 10%;
 }
+
+.create-task {
+  border: solid;
+  border-color: silver;
+  border-radius: 10px;
+  padding: 2%;
+}

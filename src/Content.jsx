@@ -14,7 +14,7 @@ export function Content() {
   const [todos, setTodos] = useState([]);
   const [lists, setLists] = useState([]);
 
-  //Getting data from index todos
+  // Getting data from index todos
   const handleIndexTodos = () => {
     axios.get("http://localhost:3000/todos.json").then((response) => {
       console.log(response.data);
@@ -22,7 +22,7 @@ export function Content() {
     });
   };
 
-  //Getting data from index lists
+  // Getting data from index lists
   const handleIndexLists = () => {
     axios.get("http://localhost:3000/lists.json").then((response) => {
       console.log(response.data);
@@ -55,9 +55,17 @@ export function Content() {
       ) : (
         <div>
           <h1>Welcome back!</h1>
-          <ListsIndex lists={lists} />
-          <TodosNew onCreateTodo={handleCreateTodo} />
-          <TodosIndex todos={todos} />
+          <div className="container">
+            <div className="row">
+              <div className="col-3">
+                <ListsIndex lists={lists} />
+              </div>
+              <div className="col-9">
+                <TodosNew onCreateTodo={handleCreateTodo} />
+                <TodosIndex todos={todos} />
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>

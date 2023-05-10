@@ -8,13 +8,13 @@ export function TodosNew(props) {
     event.target.reset();
   };
   return (
-    <div>
+    <div className="create-task">
       <form onSubmit={handleSubmit}>
         <div>
-          <input name="title" type="text" placeholder="Task Description"></input>
+          <input name="title" type="text" placeholder="Task name"></input>
         </div>
         <div>
-          <input name="details" type="text" placeholder="Task Details"></input>
+          <input name="details" type="text" placeholder="Description"></input>
         </div>
         {/* LIST ID REQUIRED TO CREATE */}
         <div>
