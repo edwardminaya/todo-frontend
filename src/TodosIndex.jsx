@@ -13,6 +13,7 @@ export function TodosIndex(props) {
             </div>
             <div className="col-5">{todo.due_date != "" ? <p>Due Date: {todo.due_date}</p> : <></>}</div>
           </div>
+          <button onClick={() => props.onShowTodo(todo)}>Details</button>
         </div>
       ))}
     </div>

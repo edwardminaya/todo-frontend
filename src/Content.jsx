@@ -5,6 +5,8 @@ import { TodosIndex } from "./TodosIndex";
 import { ListsIndex } from "./ListsIndex";
 import { TodosNew } from "./TodosNew";
 import { ListsNew } from "./ListsNew";
+import { Modal } from "./Modal";
+import { TodosShow } from "./TodoShow";
 // Other imports
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -16,6 +18,20 @@ export function Content() {
   const [lists, setLists] = useState([]);
   const location = useLocation();
   const list_id = new URLSearchParams(location.search).get("list_id");
+  const [isTodosShowVisible, setIsTodosShowVisible] = useState(false);
+  const [currentTodo, setCurrentTodo] = useState({});
+
+  // Opening and Closing Modal
+  const handleShowTodo = (todo) => {
+    console.log("handleShowTodo", todo);
+    setIsTodosShowVisible(true);
+    setCurrentTodo(todo);
+  };
+
+  const handleClose = () => {
+    console.log("handleClose");
+    setIsTodosShowVisible(false);
+  };
 
   // Getting data from index todos
   const handleIndexTodos = (list_id) => {
@@ -77,9 +93,13 @@ export function Content() {
                 <ListsIndex lists={lists} />
               </div>
               <div className="col-8">
-                <h4>My Tasks</h4>
+                <h4>Create a New Task</h4>
                 <TodosNew onCreateTodo={handleCreateTodo} />
-                <TodosIndex todos={todos} />
+                <h5>My Tasks</h5>
+                <TodosIndex todos={todos} onShowTodo={handleShowTodo} />
+                <Modal show={isTodosShowVisible} onClose={handleClose}>
+                  <TodosShow todo={currentTodo} />
+                </Modal>
               </div>
             </div>
           </div>
