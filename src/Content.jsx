@@ -72,13 +72,12 @@ export function Content() {
         <div>
           <div className="container">
             <div className="row">
-              <div className="col-3">
-                <h3>My Lists</h3>
+              <div className="col-4">
                 <ListsNew onCreateList={handleCreateList} />
                 <ListsIndex lists={lists} />
               </div>
-              <div className="col-9">
-                <h3>My Tasks</h3>
+              <div className="col-8">
+                <h4>My Tasks</h4>
                 <TodosNew onCreateTodo={handleCreateTodo} />
                 <TodosIndex todos={todos} />
               </div>

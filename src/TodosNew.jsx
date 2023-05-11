@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
 export function TodosNew(props) {
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const listId = urlSearchParams.get("list_id");
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
+    params.append("list_id", listId);
     console.log("handleSubmit", params);
     props.onCreateTodo(params);
     event.target.reset();
@@ -10,21 +14,34 @@ export function TodosNew(props) {
   return (
     <div className="create-task">
       <form onSubmit={handleSubmit}>
-        <div>
-          <input name="title" type="text" placeholder="Task name"></input>
+        <div className="task-name">
+          <input
+            className="form-control form-control-sm"
+            name="title"
+            type="text"
+            placeholder="Task name"
+            aria-label=".form-control-sm example"
+          ></input>
         </div>
-        <div>
-          <input name="details" type="text" placeholder="Description"></input>
+        <div className="task-description">
+          <input
+            className="form-control form-control-sm"
+            name="details"
+            type="text"
+            placeholder="Description"
+            aria-label=".form-control-sm example"
+          ></input>
         </div>
-        {/* LIST ID REQUIRED TO CREATE */}
-        <div>
-          <input name="list_id" type="number" placeholder="Select A Task List"></input>
-          Required
+        <div className="container">
+          <div className="row">
+            <div className="col-9">
+              Due Date <input name="due_date" type="date"></input>
+            </div>
+            <div className="col">
+              <button type="submit">Create Task</button>
+            </div>
+          </div>
         </div>
-        <div>
-          Due Date: <input name="due_date" type="date" placeholder="Select Due Date"></input>
-        </div>
-        <button type="submit">Create Task</button>
       </form>
     </div>
   );

@@ -17,7 +17,7 @@ export function Header() {
           </a>
 
           {/* LINKS */}
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="nav justify-content-end" id="navbarNav">
             <ul className="navbar-nav">
               {localStorage.jwt == undefined ? (
                 <>

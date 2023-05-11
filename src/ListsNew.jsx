@@ -10,12 +10,25 @@ export function ListsNew(props) {
   };
 
   return (
-    <div>
+    <div className="list-create">
+      <h4>My Lists</h4>
       <form onSubmit={handleSubmit}>
-        <div>
-          <input name="list_name" type="text" placeholder="List Name"></input>
+        <div className="container">
+          <div className="row">
+            <div className="col-8">
+              <input
+                className="form-control form-control-sm"
+                name="list_name"
+                type="text"
+                placeholder="Create List"
+                aria-label=".form-control-sm example"
+              ></input>
+            </div>
+            <div className="col-1">
+              <button type="submit">+</button>
+            </div>
+          </div>
         </div>
-        <button type="submit">Create List</button>
       </form>
     </div>
   );
