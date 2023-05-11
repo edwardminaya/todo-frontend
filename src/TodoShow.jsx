@@ -2,7 +2,9 @@
 export function TodosShow(props) {
   return (
     <div>
-      <h1>{props.todo.title}</h1>
+      <h5>{props.todo.title}</h5>
+      <p>{props.todo.details}</p>
+      <p>{props.todo.due_date}</p>
     </div>
   );
 }

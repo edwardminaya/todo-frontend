@@ -8,12 +8,23 @@ export function TodosIndex(props) {
             <div className="col-1" id="checkbox">
               <input type="checkbox"></input>
             </div>
-            <div className="col-6" id="title">
+            <div className="col-4" id="title">
               <p>{todo.title}</p>
             </div>
-            <div className="col-5">{todo.due_date != "" ? <p>Due Date: {todo.due_date}</p> : <></>}</div>
+            <div className="col-5" id="date">
+              {todo.due_date != "" ? (
+                <p>
+                  <img id="calendar" src="https://cdn-icons-png.flaticon.com/512/2886/2886665.png" />
+                  {todo.due_date}
+                </p>
+              ) : (
+                <></>
+              )}
+            </div>
+            <div className="col-2">
+              <button onClick={() => props.onShowTodo(todo)}>Details</button>
+            </div>
           </div>
-          <button onClick={() => props.onShowTodo(todo)}>Details</button>
         </div>
       ))}
     </div>

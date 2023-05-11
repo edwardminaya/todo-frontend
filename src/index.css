@@ -79,6 +79,16 @@ div.col-8 {
   margin-bottom: 0;
 }
 
+#date {
+  text-align: end;
+}
+
+#calendar {
+  height: 30px;
+  width: auto;
+  margin-right: 5px;
+}
+
 
 
 
