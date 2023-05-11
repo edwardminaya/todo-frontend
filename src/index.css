@@ -62,11 +62,6 @@ div.col-8 {
   margin-right: 33%;
 }
 
-.list-item:focus {
-  background-color: #00ADB5;
-  border-radius: 10px;
-}
-
 .task-name, .task-description {
   margin: 5px;
 }
@@ -88,6 +83,7 @@ div.col-8 {
   width: auto;
   margin-right: 5px;
 }
+
 
 
 

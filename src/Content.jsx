@@ -95,8 +95,8 @@ export function Content() {
               <div className="col-8">
                 <h4>Create a New Task</h4>
                 <TodosNew onCreateTodo={handleCreateTodo} />
-                <h5>My Tasks</h5>
-                <TodosIndex todos={todos} onShowTodo={handleShowTodo} />
+
+                <TodosIndex todos={todos} setTodos={setTodos} onShowTodo={handleShowTodo} />
                 <Modal show={isTodosShowVisible} onClose={handleClose}>
                   <TodosShow todo={currentTodo} />
                 </Modal>
