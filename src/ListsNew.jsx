@@ -24,6 +24,7 @@ export function ListsNew(props) {
                 aria-label=".form-control-sm example"
               ></input>
             </div>
+
             <div className="col-1">
               <button type="submit">+</button>
             </div>
