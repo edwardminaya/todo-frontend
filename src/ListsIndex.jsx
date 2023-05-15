@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 export function ListsIndex(props) {
   return (
     <div className="list-index">
-      {props.lists.map((list) => (
-        <div key={list.id}>
-          <Link to={`/todos?list_id=${list.id}`} className="list-item">
-            {list.list_name}
-          </Link>
-        </div>
-      ))}
+      {Array.isArray(props.lists) &&
+        props.lists.map((list) => (
+          <div key={list.id}>
+            <Link to={`/todos?list_id=${list.id}`} className="list-item">
+              {list.list_name}
+            </Link>
+          </div>
+        ))}
     </div>
   );
 }
