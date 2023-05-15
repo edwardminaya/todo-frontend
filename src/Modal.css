@@ -11,7 +11,9 @@
 
 .modal-main {
   position: fixed;
-  background: white;
+  background: #EEEEEE;
+  color: #222831;
+  border-radius: 10px;
   width: 80%;
   height: auto;
   top: 50%;

@@ -63,6 +63,33 @@ export function Content() {
     });
   };
 
+  // Update Task
+  const handleUpdateTask = (id, params) => {
+    console.log("handleUpdateTask", params);
+    axios.patch(`http://localhost:3000/todos/${id}.json`, params).then((response) => {
+      setTodos(
+        todos.map((todo) => {
+          if (todo.id === response.data.id) {
+            return response.data;
+          } else {
+            return todo;
+          }
+        })
+      );
+      handleClose();
+    });
+  };
+
+  // Delete Task
+  const handleDestroyTodo = (todo) => {
+    console.log("handleDestroyTodo", todo);
+    axios.delete(`http://localhost:3000/todos/${todo.id}.json`).then((response) => {
+      setTodos(todos.filter((t) => t.id !== todo.id));
+      console.log(response);
+      handleClose();
+    });
+  };
+
   // Creating a new List
   const handleCreateList = (params) => {
     console.log("handleCreateList", params);
@@ -78,7 +105,9 @@ export function Content() {
     <div className="container">
       {localStorage.jwt == undefined ? (
         <div>
-          <h1>Welcome! Login or Signup</h1>
+          <h1>Welcome to Just Do It</h1>
+          <h3>We keep track of your tasks, you just have to do it.</h3>
+          <h5>Sign Up or Login to get start!</h5>
           <Routes>
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
@@ -98,7 +127,7 @@ export function Content() {
 
                 <TodosIndex todos={todos} setTodos={setTodos} onShowTodo={handleShowTodo} />
                 <Modal show={isTodosShowVisible} onClose={handleClose}>
-                  <TodosShow todo={currentTodo} />
+                  <TodosShow todo={currentTodo} onUpdateTodo={handleUpdateTask} onDestroyTodo={handleDestroyTodo} />
                 </Modal>
               </div>
             </div>

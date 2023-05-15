@@ -13,7 +13,7 @@ export function Header() {
               height={24}
               className="d-inline-block align-text-top"
             ></img>
-            Todo App
+            JUST DO IT
           </a>
 
           {/* LINKS */}
