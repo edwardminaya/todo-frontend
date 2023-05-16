@@ -110,5 +110,19 @@ div.col-8 {
   vertical-align: middle;
 }
 
+#home {
+  width: 1000px;
+  height: auto;
+  
+}
+
+.homepage {
+  text-align: center;
+}
+
+#signuporlogin {
+  margin-bottom: 50px;
+}
+
 
 

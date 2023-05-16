@@ -100,14 +100,23 @@ export function Content() {
 
   useEffect(handleIndexLists, []);
 
+  // Homepage logic
+  const path = location.pathname;
+  const shouldShowTags = !(path === "/login" || path === "/signup");
+
   //View
   return (
     <div className="container">
       {localStorage.jwt == undefined ? (
         <div>
-          <h1>Welcome to Just Do It</h1>
-          <h3>We keep track of your tasks, you just have to do it.</h3>
-          <h5>Sign Up or Login to get start!</h5>
+          {shouldShowTags && (
+            <div className="homepage">
+              <h1>Welcome!</h1>
+              <h3>Keep track of your tasks with Execute.</h3>
+              <h5 id="signuporlogin">Sign Up or Login to get start!</h5>
+              <img id="home" src="/image/Screen Shot 2023-05-16 at 2.00.39 PM.png" />
+            </div>
+          )}
           <Routes>
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
