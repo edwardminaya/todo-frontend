@@ -21,16 +21,16 @@ You will be able to see the application and it should be pulling in data from th
 # Minimum Viable Product
 
 - Allow users to see all of their tasks (complete)
-- Allow users to create a task (in progress)
-- Allow users to see an individual task
-- Allow users to update a task
-- Allow users to delete a task
-- Allow users to to sign up (in progress)
-- Allow users to login and logout (in progress)
+- Allow users to create a task (complete)
+- Allow users to see an individual task (complete)
+- Allow users to update a task (complete)
+- Allow users to delete a task (complete)
+- Allow users to to sign up (complete)
+- Allow users to login and logout (complete)
 
 # Future Features
 
-- Allow users to create task lists
+- Allow users to create task lists (complete)
 - Allow users to prioritize tasks
 - Allow users to categorize tasks
 - Allow users to set due dates and get notifications

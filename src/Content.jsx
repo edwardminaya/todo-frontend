@@ -20,6 +20,7 @@ export function Content() {
   const list_id = new URLSearchParams(location.search).get("list_id");
   const [isTodosShowVisible, setIsTodosShowVisible] = useState(false);
   const [currentTodo, setCurrentTodo] = useState({});
+  const path = location.pathname;
 
   // Opening and Closing Modal
   const handleShowTodo = (todo) => {
@@ -101,7 +102,6 @@ export function Content() {
   useEffect(handleIndexLists, []);
 
   // Homepage logic
-  const path = location.pathname;
   const shouldShowTags = !(path === "/login" || path === "/signup");
 
   //View
