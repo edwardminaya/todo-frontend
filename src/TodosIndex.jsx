@@ -13,7 +13,11 @@ export function TodosIndex(props) {
 
   return (
     <div className="todos-index">
-      <h5>Tasks</h5>
+      <h5>
+        {props.lists.map((list) => (
+          <div key={list.id}>{list.list_name}</div>
+        ))}
+      </h5>
       {props.todos.map((todo) => (
         <div key={todo.id} className="container" id="task-row">
           <div className="row justify-items-start" id="task">

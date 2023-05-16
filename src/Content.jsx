@@ -125,7 +125,7 @@ export function Content() {
                 <h4>Create a New Task</h4>
                 <TodosNew onCreateTodo={handleCreateTodo} />
 
-                <TodosIndex todos={todos} setTodos={setTodos} onShowTodo={handleShowTodo} />
+                <TodosIndex todos={todos} setTodos={setTodos} onShowTodo={handleShowTodo} lists={lists} />
                 <Modal show={isTodosShowVisible} onClose={handleClose}>
                   <TodosShow todo={currentTodo} onUpdateTodo={handleUpdateTask} onDestroyTodo={handleDestroyTodo} />
                 </Modal>
