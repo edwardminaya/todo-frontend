@@ -23,26 +23,40 @@ export function Signup() {
 
   return (
     <div id="signup">
-      <h1>Signup</h1>
+      <h1 id="signuptext">Signup</h1>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
-        <div>
-          Name: <input name="name" type="text" />
+        <div className="mb-3">
+          <label htmlFor="formGroupExampleInput" className="form-label">
+            Name
+          </label>
+          <input name="name" type="text" className="form-control" id="formGroupExampleInput" />
         </div>
-        <div>
-          Email: <input name="email" type="email" />
+        <div className="mb-3">
+          <label htmlFor="formGroupExampleInput2" className="form-label">
+            Email
+          </label>
+          <input name="email" type="email" className="form-control" id="formGroupExampleInput2" />
         </div>
-        <div>
-          Password: <input name="password" type="password" />
+        <div className="mb-3">
+          <label htmlFor="formGroupExampleInput3" className="form-label">
+            Pasword
+          </label>
+          <input name="password" type="password" className="form-control" id="formGroupExampleInput3" />
         </div>
-        <div>
-          Password confirmation: <input name="password_confirmation" type="password" />
+        <div className="mb-3">
+          <label htmlFor="formGroupExampleInput4" className="form-label">
+            Password Confirmation
+          </label>
+          <input name="password_confirmation" type="password" className="form-control" id="formGroupExampleInput4" />
         </div>
-        <button type="submit">Signup</button>
+        <button className="list-item" type="submit">
+          Signup
+        </button>
       </form>
     </div>
   );

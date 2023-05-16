@@ -11,6 +11,7 @@ export function TodosNew(props) {
     props.onCreateTodo(params);
     event.target.reset();
   };
+
   return (
     <div className="create-task">
       <form onSubmit={handleSubmit}>

@@ -124,5 +124,20 @@ div.col-8 {
   margin-bottom: 50px;
 }
 
+#signup, #login {
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+#signuptext {
+  text-align: center;
+}
+
+#details {
+  height: 30px;
+  width: auto;
+  background-color: white;
+  border: none;
+}
 
 

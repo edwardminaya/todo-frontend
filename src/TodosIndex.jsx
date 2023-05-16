@@ -59,7 +59,12 @@ export function TodosIndex(props) {
               )}
             </div>
             <div className="col-2">
-              <button onClick={() => props.onShowTodo(todo)}>Details</button>
+              <button onClick={() => props.onShowTodo(todo)}>
+                <img
+                  id="details"
+                  src="https://p.kindpng.com/picc/s/210-2109960_info-info-icon-png-white-transparent-png.png"
+                />
+              </button>
             </div>
           </div>
         </div>
