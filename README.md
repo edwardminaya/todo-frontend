@@ -2,6 +2,8 @@
 
 This is a Todo frontend using React. Users can create lists and tasks associated with each list created. This is a single page view application that allows users to view all their tasks and lists. Users can update and delete entries.
 
+https://github.com/edwardminaya/todo-frontend/assets/97701763/b2d7cc5f-8eb5-400c-a74b-551d9c2a0568
+
 # Installation
 
 Clone this repository onto your machine. Ensure that you are able to run React on your machine. If you need a backend see this link to get that started [Backend](https://github.com/edwardminaya/todo-api)
