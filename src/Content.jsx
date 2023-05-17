@@ -112,7 +112,6 @@ export function Content() {
           {shouldShowTags && (
             <div className="homepage">
               <h1>Welcome!</h1>
-              <h3>Keep track of your tasks with Execute.</h3>
               <h5 id="signuporlogin">Sign Up or Login to get start!</h5>
               <img id="home" src="/image/Screen Shot 2023-05-16 at 2.00.39 PM.png" />
             </div>
