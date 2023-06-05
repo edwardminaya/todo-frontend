@@ -14,7 +14,7 @@ export function Login() {
     setErrors([]);
     const params = new FormData(event.target);
     axios
-      .post("https://todo-api-eminaya.herokuapp.com/sessions.json", params)
+      .post("http://localhost:3000/sessions.json", params)
       .then((response) => {
         console.log(response.data);
         axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;

@@ -11,7 +11,7 @@ export function ListsIndex(props) {
   const handleUpdateList = (event, list) => {
     event.preventDefault();
     axios
-      .patch(`https://todo-api-eminaya.herokuapp.com/lists/${list.id}.json`, { list_name: newName })
+      .patch(`http://localhost:3000/lists/${list.id}.json`, { list_name: newName })
       .then(() => {
         setEditListId(null); // exit edit mode
         setNewName(""); // reset new name input field

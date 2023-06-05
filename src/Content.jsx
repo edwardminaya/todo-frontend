@@ -36,7 +36,7 @@ export function Content() {
 
   // Getting data from index todos
   const handleIndexTodos = (list_id) => {
-    axios.get(`https://todo-api-eminaya.herokuapp.com/todos.json?list_id=${list_id}`).then((response) => {
+    axios.get(`http://localhost:3000/todos.json?list_id=${list_id}`).then((response) => {
       console.log(response.data);
       setTodos(response.data);
     });
@@ -50,7 +50,7 @@ export function Content() {
 
   // Getting data from index lists
   const handleIndexLists = () => {
-    axios.get("https://todo-api-eminaya.herokuapp.com/lists.json").then((response) => {
+    axios.get("http://localhost:3000/lists.json").then((response) => {
       console.log(response.data);
       setLists(response.data);
     });
@@ -59,7 +59,7 @@ export function Content() {
   // Creating a new task
   const handleCreateTodo = (params) => {
     console.log("handleCreateTodo", params);
-    axios.post("https://todo-api-eminaya.herokuapp.com/todos.json", params).then((response) => {
+    axios.post("http://localhost:3000/todos.json", params).then((response) => {
       setTodos([...todos, response.data]);
     });
   };
@@ -67,7 +67,7 @@ export function Content() {
   // Update Task
   const handleUpdateTask = (id, params) => {
     console.log("handleUpdateTask", params);
-    axios.patch(`https://todo-api-eminaya.herokuapp.com/todos/${id}.json`, params).then((response) => {
+    axios.patch(`http://localhost:3000/todos/${id}.json`, params).then((response) => {
       setTodos(
         todos.map((todo) => {
           if (todo.id === response.data.id) {
