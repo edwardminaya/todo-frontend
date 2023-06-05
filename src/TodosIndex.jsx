@@ -10,7 +10,7 @@ export function TodosIndex(props) {
   // Handles checkbox to complete task
   const handleToggleDone = (todo) => {
     const updatedTodo = { ...todo, done: !todo.done };
-    axios.patch(`http://localhost:3000/todos/${todo.id}.json`, updatedTodo).then((response) => {
+    axios.patch(`https://todo-api-eminaya.herokuapp.com/todos/${todo.id}.json`, updatedTodo).then((response) => {
       const updatedTodos = props.todos.map((t) => (t.id === response.data.id ? response.data : t));
       props.setTodos(updatedTodos);
     });
